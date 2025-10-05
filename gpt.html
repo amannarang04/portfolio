@@ -31,7 +31,7 @@
 
   .wrap{max-width:var(--maxw);margin:0 auto;}
 
-  /* top nav */
+  
   header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
   .brand{display:flex;gap:12px;align-items:center}
   .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#022;font-weight:800;box-shadow:0 8px 30px rgba(2,6,23,0.45)}
@@ -41,7 +41,7 @@
   nav a{color:var(--muted);text-decoration:none;font-weight:500}
   nav a:hover{color:var(--accent)}
 
-  /* hamburger (CSS-only) */
+  
   .nav-toggle{display:none}
   .nav-label{display:none}
   @media (max-width:900px){
@@ -54,7 +54,7 @@
     .nav-toggle:checked ~ nav{display:flex}
   }
 
-  /* hero - centered big area */
+  
   .hero{
     min-height:66vh;
     display:grid;
@@ -85,7 +85,7 @@
   }
   .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
 
-  /* right column: big circular photo with animated ring */
+  
   .hero-right{display:flex;flex-direction:column;align-items:center;gap:18px}
   .photo-wrap{
     position:relative;width:340px;height:340px;border-radius:50%;
@@ -94,7 +94,7 @@
     box-shadow: 0 40px 90px rgba(2,6,23,0.6);
   }
 
-  /* rotating gradient ring behind */
+ 
   .ring{
     position:absolute;inset:0;border-radius:50%;
     padding:10px;
@@ -107,7 +107,7 @@
   }
   @keyframes ring-rotate{from{transform:rotate(0deg)} to{transform:rotate(360deg)}}
 
-  /* pulsing halo */
+ 
   .halo{
     position:absolute;inset:0;border-radius:50%;pointer-events:none;
     box-shadow: 0 0 0 8px rgba(96,165,250,0.06), 0 0 30px rgba(110,231,183,0.06);
@@ -125,7 +125,7 @@
   }
   .photo-inner img{width:100%;height:100%;object-fit:cover;display:block}
 
-  /* small info card under photo */
+  
   .info-card{
     width:320px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
     border-radius:14px;padding:14px 18px;color:var(--muted);
@@ -134,21 +134,21 @@
   .info-card h4{margin:0;color:var(--accent);font-size:1.05rem}
   .info-card p{margin:6px 0;font-size:0.95rem}
 
-  /* sections layout */
+  
   main{margin-top:8px}
   section.card{background:var(--card);border-radius:14px;padding:26px;margin-bottom:22px;box-shadow:0 10px 40px rgba(2,6,23,0.5)}
   section h3{margin:0 0 12px;color:var(--accent)}
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   @media(max-width:900px){.grid{grid-template-columns:1fr}}
 
-  /* ABOUT: simplified to single column (removed right metrics box) */
+  
   .about-grid{display:block;gap:20px;align-items:start}
   @media(max-width:900px){.about-grid{display:block}}
   .about-bio{font-size:1rem;color:var(--muted);line-height:1.6}
   .how-list{margin-top:12px;color:var(--muted)}
   .how-list li{margin-bottom:6px}
 
-  /* project flip cards */
+  
   .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   @media(max-width:1100px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:700px){.proj-grid{grid-template-columns:1fr}}
@@ -164,31 +164,31 @@
   .proj-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
   .tag{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:0.88rem}
 
-  /* image + fallback */
+  
   .proj-img{width:100%;height:140px;border-radius:10px;object-fit:cover;margin-bottom:10px;transition:transform .3s ease,opacity .3s ease;display:block}
   .proj-front .proj-img{box-shadow:0 8px 24px rgba(2,6,23,0.45)}
   .proj-front:hover .proj-img{transform:scale(1.03);opacity:.95}
   .no-img{position:relative;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:10px;height:140px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;letter-spacing:1px;margin-bottom:10px;}
 
-  /* skills */
+  
   .skills{display:flex;gap:10px;flex-wrap:wrap}
   .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:#e7f0fb;margin-top:8px}
   .contact-form label{color:var(--muted);font-size:0.92rem;display:block}
 
-  /* footer */
+  
   footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.92rem}
   .social{display:flex;gap:12px;justify-content:center;margin-top:12px}
   .social a{padding:10px 18px;border-radius:999px;background:linear-gradient(90deg,var(--accent2),var(--accent));color:#022;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(100,200,180,0.08)}
   .social a:hover{transform:translateY(-4px)}
 
-  /* subtle entrance animations (CSS only) */
+  
   .fade-in{opacity:0;transform:translateY(10px);animation:fadeUp .9s ease forwards}
   .fade-in.delay-1{animation-delay:.1s}
   .fade-in.delay-2{animation-delay:.25s}
   .fade-in.delay-3{animation-delay:.45s}
   @keyframes fadeUp{to{opacity:1;transform:none}}
 
-  /* reduced motion preference */
+  
   @media (prefers-reduced-motion: reduce){
     .ring, .halo, .profile-frame, .fade-in, .proj-inner { animation: none !important; transition: none !important; }
   }
@@ -205,7 +205,7 @@
         </div>
       </div>
 
-      <!-- CSS-only hamburger + nav -->
+     
       <input id="nav-toggle" class="nav-toggle" type="checkbox" />
       <label for="nav-toggle" class="nav-label"><span></span></label>
       <nav>
@@ -216,26 +216,26 @@
       </nav>
     </header>
 
-    <!-- HERO -->
+    
     <section class="hero">
       <div class="intro fade-in delay-1">
         <h2>Hi — I’m <span class="role">Aman Narang</span></h2>
         <p>I build sleek, efficient, and user-focused web experiences — turning ideas into interactive realities.</p>
         <div class="cta-row">
-          <!-- Download Resume removed -->
+          
           <a class="btn secondary" href="#projects">View Projects</a>
         </div>
       </div>
 
       <div class="hero-right">
         <div class="photo-wrap fade-in delay-2">
-          <!-- animated ring -->
+          
           <div class="ring" aria-hidden></div>
           <div class="halo" aria-hidden></div>
 
-          <!-- photo inner -->
+          
           <div class="photo-inner" role="img" aria-label="Portrait of Aman Narang">
-            <!-- use your uploaded file "aman1.jpg" placed next to this index.html -->
+           
             <img src="aman1.jpg" alt="Aman Narang" onerror="this.style.display='none'">
           </div>
         </div>
@@ -250,7 +250,7 @@
     </section>
 
     <main>
-      <!-- ABOUT (right metrics box removed) -->
+      
       <section id="about" class="card fade-in">
         <h3>About</h3>
 
@@ -276,13 +276,13 @@
         </div>
       </section>
 
-      <!-- PROJECTS (rotatable/flip cards) -->
+      
       <section id="projects" class="card fade-in">
         <h3>Projects</h3>
         <p class="muted">Hover (or focus) a project card to flip and see details. Images: <code>ft1.jpg</code>, <code>port.jpg</code>, <code>auto.jpg</code></p>
         <div class="proj-grid" style="margin-top:14px">
 
-          <!-- Flight Price Tracker -->
+          
           <article class="proj-flip" tabindex="0" aria-labelledby="p1title" aria-describedby="p1desc">
             <div class="proj-inner">
               <div class="proj-face proj-front">
@@ -290,6 +290,7 @@
                 <div>
                   <h4 id="p1title" class="proj-title">Flight Price Tracker</h4>
                   <p id="p1desc" class="proj-desc">A web app that monitors flight fares and alerts users when prices drop below a target threshold.</p>
+                <a href="https://github.com/amannarang04/flight-tracker.git"> github </a>
                 </div>
                 <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Python</span></div>
               </div>
@@ -308,7 +309,7 @@
             </div>
           </article>
 
-          <!-- Portfolio Design -->
+          
           <article class="proj-flip" tabindex="0" aria-labelledby="p2title" aria-describedby="p2desc">
             <div class="proj-inner">
               <div class="proj-face proj-front">
@@ -334,7 +335,7 @@
             </div>
           </article>
 
-          <!-- Automation Scripts -->
+          
           <article class="proj-flip" tabindex="0" aria-labelledby="p3title" aria-describedby="p3desc">
             <div class="proj-inner">
               <div class="proj-face proj-front">
@@ -363,7 +364,7 @@
         </div>
       </section>
 
-      <!-- SKILLS -->
+      
       <section id="skills" class="card fade-in">
         <h3>Skills</h3>
         <div class="skills">
@@ -372,8 +373,7 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <!-- CONNECT ME -->
+     
 <section id="contact" class="card fade-in">
   <h3 style="font-size:1.8rem; color:var(--accent2); text-align:center; margin-bottom:16px;">
     Connect Me
@@ -407,6 +407,6 @@
     </footer>
   </div>
 
-  <!-- no JS — everything CSS-only; images assume ft1.jpg, port.jpg, auto.jpg and optional aman1.jpg are placed alongside this file -->
+ 
 </body>
 </html>
