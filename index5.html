@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aman Narang — Problem Solver & Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 14px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, #071022 100%);
+      color: #e6eef8;
+      line-height:1.45;
+      padding:32px 24px;
+    }
+
+    .container{max-width:1100px;margin:0 auto}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#022;box-shadow:0 6px 24px rgba(6,11,23,0.6)}
+    .brand h1{font-size:1.1rem;margin:0}
+    .brand p{margin:0;font-size:0.85rem;color:var(--muted)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:500}
+    nav a:hover{color:var(--accent)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:40px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:36px;box-shadow:0 8px 40px rgba(2,6,23,0.6)}
+    .hero .title{font-size:2rem;margin:0 0 8px}
+    .role{color:var(--accent);font-weight:700}
+
+    /* Typewriter (CSS only) */
+    .typewriter{
+      display:inline-block;
+      overflow:hidden;
+      white-space:nowrap;
+      border-right:2px solid rgba(230,238,248,0.5);
+      animation: typing 4s steps(28, end) infinite;
+    }
+    @keyframes typing{
+      0%{width:0}
+      50%{width:100%}
+      100%{width:0}
+    }
+
+    .hero p{color:var(--muted);margin-top:6px}
+    .profile-frame{background:var(--glass);border-radius:16px;padding:18px;display:flex;align-items:center;justify-content:center}
+    .profile{width:240px;height:240px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;background:linear-gradient(135deg,var(--accent-2),var(--accent));color:#022;box-shadow:0 10px 40px rgba(2,6,23,0.6)}
+
+    /* Sections */
+    section{margin-bottom:36px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 24px rgba(2,6,23,0.55);opacity:1;transform:none}
+
+    h2{margin:0 0 14px;font-size:1.2rem}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    /* Projects */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project-card{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02))}
+    .project-card h3{margin:0 0 6px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .badge{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:0.82rem;color:var(--muted)}
+    .project-card a{display:inline-block;margin-top:12px;font-weight:600;text-decoration:none}
+
+    /* Skills */
+    .skills{display:flex;gap:10px;flex-wrap:wrap}
+    .skill-pill{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:8px 12px;border-radius:999px}
+
+    /* Experience */
+    .exp-item{display:flex;flex-direction:column;gap:6px}
+    .exp-meta{color:var(--muted);font-size:0.9rem}
+
+    /* Contact */
+    .contact-list{display:flex;flex-direction:column;gap:8px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#022;font-weight:700;text-decoration:none;box-shadow:0 8px 30px rgba(100,200,180,0.08)}
+
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.hero .profile{width:180px;height:180px}}
+
+    footer{color:var(--muted);text-align:center;margin-top:18px;font-size:0.9rem}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">AN</div>
+        <div>
+          <h1>Aman Narang</h1>
+          <p class="muted">Problem Solver · Web Developer</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card card">
+          <div>
+            <h2 class="title">Hi — I’m <span class="role">Aman Narang</span></h2>
+            <div class="typewriter">Problem Solver • Web Developer</div>
+            <p class="muted">I build responsive, accessible websites and small web apps. I enjoy solving practical problems with clean code and thoughtful UI.</p>
+            <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+              <a class="btn" href="#contact">Hire / Contact</a>
+              <a style="background:transparent;border-radius:10px;padding:10px 14px;border:1px solid rgba(255,255,255,0.04);color:var(--muted);text-decoration:none;font-weight:600" href="https://github.com/amannarang04" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <aside class="profile-frame card"><div class="profile">Aman<br>Narang</div></aside>
+      </section>
+
+      <section id="about">
+        <div class="card">
+          <h2>About</h2>
+          <p class="muted">I’m a problem solver and web developer focused on creating clean, maintainable web experiences. I enjoy working on small web apps and UIs that make people’s lives easier. I like to mix practical engineering (HTML, CSS, Java) with scripting in Python.</p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+          <article class="project-card card">
+            <h3>Flight Price Tracker</h3>
+            <p class="muted">A web app that monitors flight fares and alerts users when prices drop below a threshold.</p>
+            <div class="badges"><span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">Python</span></div>
+            <a href="#">View project →</a>
+          </article>
+          <article class="project-card card">
+            <h3>Portfolio Designing</h3>
+            <p class="muted">A clean, responsive single-page portfolio design for developers and designers.</p>
+            <div class="badges"><span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">Java</span></div>
+            <a href="#">View project →</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="card">
+          <h2>Skills</h2>
+          <div class="skills">
+            <div class="skill-pill">HTML</div>
+            <div class="skill-pill">CSS</div>
+            <div class="skill-pill">Java</div>
+            <div class="skill-pill">Python</div>
+            <div class="skill-pill">Responsive design</div>
+            <div class="skill-pill">Problem solving</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="grid-3">
+          <div class="card">
+            <div class="exp-item">
+              <strong>Freelance Web Developer</strong>
+              <span class="exp-meta">2023 — Present</span>
+              <p class="muted">Built small business websites, landing pages, and portfolio sites.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="exp-item">
+              <strong>Student Projects & Personal</strong>
+              <span class="exp-meta">2020 — 2023</span>
+              <p class="muted">Worked on academic and personal projects including web apps and automation scripts.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="exp-item">
+              <strong>Open to opportunities</strong>
+              <span class="exp-meta">Available</span>
+              <p class="muted">Open to internships and junior/entry web developer roles.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="card">
+          <h2>Contact</h2>
+          <div class="contact-list">
+            <div><strong>Email</strong><div class="muted"><a href="mailto:0402narang@gmail.com">0402narang@gmail.com</a></div></div>
+            <div><strong>Phone</strong><div class="muted"><a href="tel:+916376443511">+91 63764 43511</a></div></div>
+            <div><strong>GitHub</strong><div class="muted"><a href="https://github.com/amannarang04" target="_blank">github.com/amannarang04</a></div></div>
+          </div>
+          <div style="margin-top:16px"><a class="btn" href="mailto:0402narang@gmail.com">Email me</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer><div>Made with ❤️ — Aman Narang • Built with HTML & CSS only</div></footer>
+  </div>
+</body>
+</html>

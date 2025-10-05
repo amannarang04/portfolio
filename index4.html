@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aman — Cursor demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #fdeee5;       /* soft peach */
+    --panel: #5b46d8;    /* deep purple accent */
+    --panel-2: #7a6aff;
+    --muted: #6b7280;
+    --white: #ffffff;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:var(--bg);
+    color:#111827;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x: hidden;
+  }
+
+  /* basic content so you can see cursor over sections */
+  .wrap{max-width:1100px;margin:48px auto;padding:44px}
+  .hero{
+    background:linear-gradient(180deg, #fff 0%, #fff8f6 100%);
+    padding:64px;border-radius:20px;box-shadow:0 20px 60px rgba(11,12,16,0.08);
+    display:flex;gap:30px;align-items:center;
+  }
+  .hero .left{flex:1}
+  .title{font-size:36px;margin:0 0 12px}
+  .muted{color:var(--muted);margin:0 0 18px}
+  .cta{
+    display:inline-flex;gap:12px;align-items:center;padding:12px 20px;background:var(--panel);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;
+    box-shadow:0 10px 30px rgba(90,50,200,0.12);
+  }
+
+  /* area with card and big rounded shape in screenshot */
+  .demo-block{
+    margin-top:40px;
+    height:360px;
+    border-radius:24px;
+    background:linear-gradient(180deg,#fff 0%, #faf5ff 100%);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 14px 50px rgba(12,10,20,0.06);
+  }
+  .demo-card{
+    position:absolute;left:50%;top:36%;transform:translate(-50%,-36%);
+    width:420px;height:220px;border-radius:18px;background:#fff;padding:22px;
+    box-shadow:0 30px 60px rgba(15,10,30,0.07);
+  }
+
+  /* ---------- Cursor visuals ---------- */
+  /* Hide native cursor (but keep for accessibility mobile) */
+  @media (pointer: fine){
+    body { cursor: none; }
+  }
+
+  /* The pill (big rounded outline / filled faint) */
+  .cursor-pill{
+    position:fixed;
+    left:0;top:0;
+    width:96px;height:52px;border-radius:40px;
+    transform:translate(-50%,-50%) rotate(0deg) scale(1);
+    pointer-events:none;
+    display:flex;align-items:center;justify-content:center;
+    z-index:9999;
+    transition:opacity .25s ease, filter .25s ease;
+    will-change:transform, width, height;
+    background: linear-gradient(90deg, rgba(122,106,255,0.14), rgba(91,70,216,0.10));
+    border:2px solid rgba(122,106,255,0.22);
+    box-shadow: 0 10px 40px rgba(91,70,216,0.08), inset 0 -6px 18px rgba(255,255,255,0.06);
+    backdrop-filter: blur(6px);
+    opacity:1;
+  }
+
+  /* inner ring / arrow circle like in example */
+  .cursor-ring{
+    position:absolute;
+    width:34px;height:34px;border-radius:50%;
+    right:6px; /* placed inside pill to the right */
+    border:2px solid rgba(91,70,216,0.9);
+    background: rgba(255,255,255,0.02);
+    display:flex;align-items:center;justify-content:center;
+    transform:translateX(0) scale(1);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .cursor-ring::after{
+    content:'↗';
+    color: rgba(91,70,216,0.95);
+    font-size:14px; transform:translateY(-1px);
+  }
+
+  /* small center dot */
+  .cursor-dot{
+    position:fixed;left:0;top:0;width:8px;height:8px;border-radius:50%;
+    background:var(--panel); box-shadow:0 6px 20px rgba(79,70,229,0.18);
+    pointer-events:none;z-index:10000;transform:translate(-50%,-50%);
+    transition:transform .08s linear;
+  }
+
+  /* hover / active states */
+  .cursor-pill.is-hover { transform:translate(-50%,-50%) rotate(-6deg) scale(1.06); background: linear-gradient(90deg, rgba(110,231,183,0.12), rgba(96,165,250,0.08)); border-color: rgba(110,231,183,0.26); }
+  .cursor-pill.is-press { transform: translate(-50%,-50%) scale(0.96); filter:brightness(.98); }
+  .cursor-ring.is-hover { transform: translateX(6px) scale(1.05); box-shadow:0 10px 30px rgba(79,70,229,0.14); }
+  .cursor-ring.is-press { transform: translateX(6px) scale(.9); box-shadow:none; }
+
+  /* hide on small screens */
+  @media (max-width:800px){
+    .cursor-pill, .cursor-dot { display:none }
+    body { cursor: auto; }
+  }
+
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header style="display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div style="font-weight:700;color:var(--panel);font-size:20px">Aman Narang</div>
+        <div style="color:var(--muted);font-size:14px">Problem Solver · Web Developer</div>
+      </div>
+      <a class="cta" href="#contact">Contact</a>
+    </header>
+
+    <section class="hero">
+      <div class="left">
+        <h1 class="title">Design that hums — interaction that feels right.</h1>
+        <p class="muted">Example of a soft, springy cursor UI element inspired by the video you shared. Move your mouse around to see it in action.</p>
+        <p style="margin-top:18px"><a class="cta" href="#projects">See projects</a></p>
+      </div>
+      <div style="width:420px" aria-hidden>
+        <div class="demo-block" role="presentation">
+          <div class="demo-card">
+            <h3 style="margin:0 0 8px">User Experience</h3>
+            <p style="margin:0;color:var(--muted)">This card sits above the soft pill cursor so you can see interaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Cursor elements -->
+  <div class="cursor-pill" id="cursorPill" aria-hidden>
+    <div class="cursor-ring" id="cursorRing"></div>
+  </div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden></div>
+
+<script>
+/*
+ Smooth spring-follow cursor (pill + core dot)
+ - pill follows with spring (position + rotation + stretch)
+ - dot snaps closer to the real pointer
+ - hover detection on interactive elements (a, button) toggles is-hover classes
+*/
+
+// utils
+const lerp = (a,b,n) => a + (b-a) * n;
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+
+// state & elements
+const pill = document.getElementById('cursorPill');
+const ring = document.getElementById('cursorRing');
+const dot  = document.getElementById('cursorDot');
+
+let mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
+let pillPos = { x: mouse.x, y: mouse.y };
+let dotPos  = { x: mouse.x, y: mouse.y };
+let vel = { x: 0, y: 0 };
+
+// spring parameters
+const spring = 0.12;      // how fast pill moves toward mouse (lower = more lag)
+const drag = 0.82;        // damping for velocity
+const skewAmt = 0.0025;   // how much pill stretches by velocity
+
+// update mouse
+window.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+  // show if hidden (useful when switching from touch)
+  pill.style.opacity = 1;
+  dot.style.opacity = 1;
+});
+
+// hide on mouse leave
+window.addEventListener('mouseleave', ()=> {
+  pill.style.opacity = 0;
+  dot.style.opacity = 0;
+});
+
+// interactive hover detection
+const interactiveSelector = 'a, button';
+document.querySelectorAll(interactiveSelector).forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    pill.classList.add('is-hover');
+    ring.classList.add('is-hover');
+  });
+  el.addEventListener('mouseleave', () => {
+    pill.classList.remove('is-hover');
+    ring.classList.remove('is-hover');
+  });
+  el.addEventListener('mousedown', () => {
+    pill.classList.add('is-press');
+    ring.classList.add('is-press');
+  });
+  el.addEventListener('mouseup', () => {
+    pill.classList.remove('is-press');
+    ring.classList.remove('is-press');
+  });
+});
+
+// main animation loop
+function tick(){
+  // spring-ish velocity toward target
+  const dx = mouse.x - pillPos.x;
+  const dy = mouse.y - pillPos.y;
+
+  // update velocity
+  vel.x += dx * spring;
+  vel.y += dy * spring;
+  vel.x *= drag;
+  vel.y *= drag;
+
+  // update position
+  pillPos.x += vel.x;
+  pillPos.y += vel.y;
+
+  // dot follows faster (snappier)
+  dotPos.x = lerp(dotPos.x, mouse.x, 0.35);
+  dotPos.y = lerp(dotPos.y, mouse.y, 0.35);
+
+  // rotation based on velocity direction
+  const angle = Math.atan2(vel.y, vel.x) * (180/Math.PI);
+  // stretch factor from speed
+  const speed = Math.hypot(vel.x, vel.y);
+  const stretch = clamp(1 + speed * skewAmt, 0.95, 1.35);
+
+  // apply transforms
+  pill.style.transform = `translate(${pillPos.x}px, ${pillPos.y}px) translate(-50%, -50%) rotate(${angle}deg) scaleX(${stretch})`;
+  dot.style.transform = `translate(${dotPos.x}px, ${dotPos.y}px) translate(-50%, -50%)`;
+
+  // move ring inside pill so it feels attached: small parallax
+  const ringOffset = clamp(speed * 0.8, 0, 8);
+  ring.style.transform = `translateX(${ringOffset}px)`;
+
+  requestAnimationFrame(tick);
+}
+tick();
+
+</script>
+</body>
+</html>
