@@ -31,7 +31,6 @@
 
   .wrap{max-width:var(--maxw);margin:0 auto;}
 
-  
   header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
   .brand{display:flex;gap:12px;align-items:center}
   .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#022;font-weight:800;box-shadow:0 8px 30px rgba(2,6,23,0.45)}
@@ -41,7 +40,6 @@
   nav a{color:var(--muted);text-decoration:none;font-weight:500}
   nav a:hover{color:var(--accent)}
 
-  
   .nav-toggle{display:none}
   .nav-label{display:none}
   @media (max-width:900px){
@@ -54,7 +52,6 @@
     .nav-toggle:checked ~ nav{display:flex}
   }
 
-  
   .hero{
     min-height:66vh;
     display:grid;
@@ -85,7 +82,6 @@
   }
   .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
 
-  
   .hero-right{display:flex;flex-direction:column;align-items:center;gap:18px}
   .photo-wrap{
     position:relative;width:340px;height:340px;border-radius:50%;
@@ -94,7 +90,6 @@
     box-shadow: 0 40px 90px rgba(2,6,23,0.6);
   }
 
- 
   .ring{
     position:absolute;inset:0;border-radius:50%;
     padding:10px;
@@ -107,7 +102,6 @@
   }
   @keyframes ring-rotate{from{transform:rotate(0deg)} to{transform:rotate(360deg)}}
 
- 
   .halo{
     position:absolute;inset:0;border-radius:50%;pointer-events:none;
     box-shadow: 0 0 0 8px rgba(96,165,250,0.06), 0 0 30px rgba(110,231,183,0.06);
@@ -125,7 +119,6 @@
   }
   .photo-inner img{width:100%;height:100%;object-fit:cover;display:block}
 
-  
   .info-card{
     width:320px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
     border-radius:14px;padding:14px 18px;color:var(--muted);
@@ -134,63 +127,47 @@
   .info-card h4{margin:0;color:var(--accent);font-size:1.05rem}
   .info-card p{margin:6px 0;font-size:0.95rem}
 
-  
   main{margin-top:8px}
   section.card{background:var(--card);border-radius:14px;padding:26px;margin-bottom:22px;box-shadow:0 10px 40px rgba(2,6,23,0.5)}
   section h3{margin:0 0 12px;color:var(--accent)}
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   @media(max-width:900px){.grid{grid-template-columns:1fr}}
 
-  
   .about-grid{display:block;gap:20px;align-items:start}
   @media(max-width:900px){.about-grid{display:block}}
   .about-bio{font-size:1rem;color:var(--muted);line-height:1.6}
   .how-list{margin-top:12px;color:var(--muted)}
   .how-list li{margin-bottom:6px}
 
-  
+  /* Projects: static cards */
   .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   @media(max-width:1100px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:700px){.proj-grid{grid-template-columns:1fr}}
-
-  .proj-flip{perspective:1100px;height:260px}
-  .proj-inner{position:relative;width:100%;height:100%;transition:transform 1.2s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d;border-radius:12px;overflow:hidden}
-  .proj-flip:hover .proj-inner,.proj-flip:focus-within .proj-inner{transform:rotateY(180deg)}
-  .proj-face{position:absolute;inset:0;border-radius:12px;padding:18px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 30px rgba(2,6,23,0.55)}
-  .proj-front{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
-  .proj-back{background:linear-gradient(180deg, rgba(96,165,250,0.12), rgba(6,182,212,0.06));transform:rotateY(180deg)}
-  .proj-title{font-weight:700;color:#e7f0fb;margin:0}
-  .proj-desc{color:var(--muted);margin-top:8px;font-size:0.95rem}
+  .project{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;box-shadow:0 8px 30px rgba(2,6,23,0.45);display:flex;flex-direction:column;justify-content:space-between;min-height:340px}
+  .proj-img{width:100%;height:180px;border-radius:10px;object-fit:cover;margin-bottom:12px;box-shadow:0 8px 24px rgba(2,6,23,0.45)}
+  .proj-title{font-weight:700;margin:0 0 6px;color:#e7f0fb}
+  .proj-desc{color:var(--muted);margin-top:8px;font-size:0.95rem;flex:1}
   .proj-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
   .tag{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:0.88rem}
+  .proj-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 
-  
-  .proj-img{width:100%;height:140px;border-radius:10px;object-fit:cover;margin-bottom:10px;transition:transform .3s ease,opacity .3s ease;display:block}
-  .proj-front .proj-img{box-shadow:0 8px 24px rgba(2,6,23,0.45)}
-  .proj-front:hover .proj-img{transform:scale(1.03);opacity:.95}
-  .no-img{position:relative;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:10px;height:140px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;letter-spacing:1px;margin-bottom:10px;}
-
-  
   .skills{display:flex;gap:10px;flex-wrap:wrap}
   .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:#e7f0fb;margin-top:8px}
   .contact-form label{color:var(--muted);font-size:0.92rem;display:block}
 
-  
   footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.92rem}
   .social{display:flex;gap:12px;justify-content:center;margin-top:12px}
   .social a{padding:10px 18px;border-radius:999px;background:linear-gradient(90deg,var(--accent2),var(--accent));color:#022;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(100,200,180,0.08)}
   .social a:hover{transform:translateY(-4px)}
 
-  
   .fade-in{opacity:0;transform:translateY(10px);animation:fadeUp .9s ease forwards}
   .fade-in.delay-1{animation-delay:.1s}
   .fade-in.delay-2{animation-delay:.25s}
   .fade-in.delay-3{animation-delay:.45s}
   @keyframes fadeUp{to{opacity:1;transform:none}}
 
-  
   @media (prefers-reduced-motion: reduce){
-    .ring, .halo, .profile-frame, .fade-in, .proj-inner { animation: none !important; transition: none !important; }
+    .ring, .halo, .profile-frame, .fade-in { animation: none !important; transition: none !important; }
   }
 </style>
 </head>
@@ -205,7 +182,6 @@
         </div>
       </div>
 
-     
       <input id="nav-toggle" class="nav-toggle" type="checkbox" />
       <label for="nav-toggle" class="nav-label"><span></span></label>
       <nav>
@@ -216,27 +192,23 @@
       </nav>
     </header>
 
-    
+    <!-- HERO -->
     <section class="hero">
       <div class="intro fade-in delay-1">
         <h2>Hi — I’m <span class="role">Aman Narang</span></h2>
         <p>I build sleek, efficient, and user-focused web experiences — turning ideas into interactive realities.</p>
         <div class="cta-row">
-          
           <a class="btn secondary" href="#projects">View Projects</a>
         </div>
       </div>
 
       <div class="hero-right">
         <div class="photo-wrap fade-in delay-2">
-          
           <div class="ring" aria-hidden></div>
           <div class="halo" aria-hidden></div>
 
-          
           <div class="photo-inner" role="img" aria-label="Portrait of Aman Narang">
-           
-            <img src="aman1.jpg" alt="Aman Narang" onerror="this.style.display='none'">
+            <img src="aman1.jpg" alt="Aman Narang" loading="lazy" onerror="this.style.display='none'">
           </div>
         </div>
 
@@ -244,13 +216,13 @@
           <h4>Aman Narang</h4>
           <p class="sub">Problem Solver · Web Developer</p>
           <p>📍 India · 🌸 Creative Thinker</p>
-          <p><a href="mailto:0402narang@gmail.com">0402narang@gmail.com</a> · <a href="https://github.com/amannarang04" target="_blank" rel="noopener">github.com/amannarang04</a></p>
+          <p><a href="mailto:0402narang@gmail.com">0402narang@gmail.com</a> · <a href="https://github.com/amannarang04" target="_blank" rel="noopener noreferrer">github.com/amannarang04</a></p>
         </div>
       </div>
     </section>
 
     <main>
-      
+      <!-- ABOUT -->
       <section id="about" class="card fade-in">
         <h3>About</h3>
 
@@ -276,95 +248,54 @@
         </div>
       </section>
 
-      
+      <!-- PROJECTS (static cards with GitHub links) -->
       <section id="projects" class="card fade-in">
         <h3>Projects</h3>
-        <p class="muted">Hover (or focus) a project card to flip and see details. Images: <code>ft1.jpg</code>, <code>port.jpg</code>, <code>auto.jpg</code></p>
+        <p class="muted">Project screenshots: <code>ft1.jpg</code>, <code>port.jpg</code>, <code>auto.jpg</code></p>
         <div class="proj-grid" style="margin-top:14px">
 
-          
-          <article class="proj-flip" tabindex="0" aria-labelledby="p1title" aria-describedby="p1desc">
-            <div class="proj-inner">
-              <div class="proj-face proj-front">
-                <img src="ft1.jpg" alt="Flight Price Tracker preview" class="proj-img" onerror="this.style.display='none'; this.parentNode.classList.add('no-img')">
-                <div>
-                  <h4 id="p1title" class="proj-title">Flight Price Tracker</h4>
-                  <p id="p1desc" class="proj-desc">A web app that monitors flight fares and alerts users when prices drop below a target threshold.</p>
-                <a href="https://github.com/amannarang04/flight-tracker.git"> github </a>
-                </div>
-                <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Python</span></div>
-              </div>
-
-              <div class="proj-face proj-back">
-                <div>
-                  <h4 class="proj-title">What I built</h4>
-                  <ul class="muted" style="margin-top:8px">
-                    <li>Backend price polling & threshold alerts</li>
-                    <li>Responsive UI with accessible forms</li>
-                    <li>Lightweight storage and notifications</li>
-                  </ul>
-                </div>
-                <div style="margin-top:8px"><a class="btn" href="#">Live / Demo</a> <a class="btn secondary" href="#">Repo</a></div>
-              </div>
+          <article class="project">
+            <img src="ft1.jpg" alt="Flight Price Tracker preview" class="proj-img" loading="lazy" onerror="this.style.display='none'">
+            <div>
+              <h4 class="proj-title">Flight Price Tracker</h4>
+              <p class="proj-desc">A web app that monitors flight fares and alerts users when prices drop below a target threshold.</p>
+              <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Python</span></div>
+            </div>
+            <div class="proj-actions">
+              <a class="btn" href="https://github.com/amannarang04/flight-tracker.git" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              <a class="btn secondary" href="#" aria-disabled="true">Live (N/A)</a>
             </div>
           </article>
 
-          
-          <article class="proj-flip" tabindex="0" aria-labelledby="p2title" aria-describedby="p2desc">
-            <div class="proj-inner">
-              <div class="proj-face proj-front">
-                <img src="port.jpg" alt="Portfolio Design preview" class="proj-img" onerror="this.style.display='none'; this.parentNode.classList.add('no-img')">
-                <div>
-                  <h4 id="p2title" class="proj-title">Portfolio Design</h4>
-                  <p id="p2desc" class="proj-desc">A responsive, modern portfolio design showcasing projects and skills with a clean, accessible layout.</p>
-                </div>
-                <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Java</span></div>
-              </div>
-
-              <div class="proj-face proj-back">
-                <div>
-                  <h4 class="proj-title">Highlights</h4>
-                  <ul class="muted" style="margin-top:8px">
-                    <li>Mobile-first responsive grid</li>
-                    <li>Animated but accessible interactions</li>
-                    <li>Performance-minded asset usage</li>
-                  </ul>
-                </div>
-                <div style="margin-top:8px"><a class="btn" href="#">View Template</a> <a class="btn secondary" href="#">Repo</a></div>
-              </div>
+          <article class="project">
+            <img src="port.jpg" alt="Portfolio Design preview" class="proj-img" loading="lazy" onerror="this.style.display='none'">
+            <div>
+              <h4 class="proj-title">Portfolio Design</h4>
+              <p class="proj-desc">A responsive, modern portfolio showcasing projects and skills with a clean, accessible layout.</p>
+              <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Java</span></div>
+            </div>
+            <div class="proj-actions">
+              <a class="btn" href="https://github.com/amannarang04/portfolio.git" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              <a class="btn secondary" href="#" aria-disabled="true">Live (N/A)</a>
             </div>
           </article>
 
-          
-          <article class="proj-flip" tabindex="0" aria-labelledby="p3title" aria-describedby="p3desc">
-            <div class="proj-inner">
-              <div class="proj-face proj-front">
-                <img src="auto.jpg" alt="Automation Scripts preview" class="proj-img" onerror="this.style.display='none'; this.parentNode.classList.add('no-img')">
-                <div>
-                  <h4 id="p3title" class="proj-title">Automation Scripts</h4>
-                  <p id="p3desc" class="proj-desc">Small automation tools and scripts to streamline repetitive tasks and data processing.</p>
-                </div>
-                <div class="proj-tags"><span class="tag">Python</span><span class="tag">Scripting</span><span class="tag">CLI</span></div>
-              </div>
-
-              <div class="proj-face proj-back">
-                <div>
-                  <h4 class="proj-title">Built For</h4>
-                  <ul class="muted" style="margin-top:8px">
-                    <li>Data scraping & transformation</li>
-                    <li>Task automation for personal projects</li>
-                    <li>Small deployment-friendly utilities</li>
-                  </ul>
-                </div>
-                <div style="margin-top:8px"><a class="btn" href="#">Examples</a> <a class="btn secondary" href="#">Repo</a></div>
-              </div>
+          <article class="project">
+            <img src="auto.jpg" alt="Automation Scripts preview" class="proj-img" loading="lazy" onerror="this.style.display='none'">
+            <div>
+              <h4 class="proj-title">Automation Scripts</h4>
+              <p class="proj-desc">A collection of Python scripts that automate repetitive tasks and handle data efficiently.</p>
+              <div class="proj-tags"><span class="tag">Python</span><span class="tag">Scripting</span><span class="tag">CLI</span></div>
+            </div>
+            <div class="proj-actions">
+              <a class="btn secondary" href="#" aria-disabled="true">Repo Unavailable</a>
             </div>
           </article>
 
         </div>
       </section>
 
-      
+      <!-- SKILLS -->
       <section id="skills" class="card fade-in">
         <h3>Skills</h3>
         <div class="skills">
@@ -373,40 +304,60 @@
         </div>
       </section>
 
-     
-<section id="contact" class="card fade-in">
-  <h3 style="font-size:1.8rem; color:var(--accent2); text-align:center; margin-bottom:16px;">
-    Connect Me
+      <!-- 🌐 LET’S CONNECT SECTION -->
+<section id="contact" class="card fade-in" 
+  style="text-align:center; background:linear-gradient(160deg, rgba(96,165,250,0.08), rgba(110,231,183,0.06)); border-radius:18px; padding:50px 24px; box-shadow:0 10px 60px rgba(2,6,23,0.6);">
+
+  <h3 style="font-size:2rem; font-weight:800; color:var(--accent2); margin-bottom:10px;">
+    Let’s Connect 💬
   </h3>
-  <p class="muted" style="text-align:center; font-size:1.05rem;">
-    Email: <a href="mailto:0402narang@gmail.com">0402narang@gmail.com</a> · 
-    Phone: <a href="tel:+916376443511">+91 63764 43511</a>
+
+  <p style="color:var(--muted); font-size:1.05rem; margin-bottom:34px;">
+    Got an idea, a project, or just want to say hi? I’d love to hear from you — drop a message below!
   </p>
 
-  <form class="contact-form" aria-label="Contact form (layout only)" style="max-width:600px;margin:0 auto;">
-    <label for="cname">Name</label>
-    <input id="cname" name="name" type="text" placeholder="Your name">
-    <label for="cemail">Email</label>
-    <input id="cemail" name="email" type="email" placeholder="you@example.com">
-    <label for="cmsg">Message</label>
-    <textarea id="cmsg" name="message" rows="4" placeholder="Tell me about your project..."></textarea>
-    <div style="margin-top:12px; text-align:center;">
-      <a href="#" class="btn">Send (Layout Only)</a>
+  <!-- 🌟 Contact Info -->
+ 
+
+  <!-- 💌 Form box -->
+  <form class="contact-form" aria-label="Contact form (layout only)"
+        style="max-width:700px; margin:0 auto; background:rgba(255,255,255,0.03); padding:32px; border-radius:20px; box-shadow:0 8px 40px rgba(2,6,23,0.55); text-align:left; backdrop-filter:blur(4px);">
+    <label for="cname" style="color:var(--muted);font-weight:600;">Name</label>
+    <input id="cname" name="name" type="text" placeholder="Your name"
+           style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:#e7f0fb;margin-top:8px;margin-bottom:18px;transition:border .3s;">
+    
+    <label for="cemail" style="color:var(--muted);font-weight:600;">Email</label>
+    <input id="cemail" name="email" type="email" placeholder="you@example.com"
+           style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:#e7f0fb;margin-top:8px;margin-bottom:18px;transition:border .3s;">
+
+    <label for="cmsg" style="color:var(--muted);font-weight:600;">Message</label>
+    <textarea id="cmsg" name="message" rows="4" placeholder="Write your message..."
+              style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:#e7f0fb;margin-top:8px;margin-bottom:20px;transition:border .3s;"></textarea>
+
+    <div style="text-align:center;">
+      <button type="button"
+        style="padding:14px 40px;font-size:1.05rem;font-weight:700;color:#022;background:linear-gradient(90deg,var(--accent2),var(--accent));
+               border:none;border-radius:999px;cursor:pointer;transition:all .3s ease;box-shadow:0 10px 25px rgba(110,231,183,0.3);">
+        Send Message 💌
+      </button>
     </div>
   </form>
+
+ 
+
 </section>
 
+
+    </main>
 
     <footer>
       <div>Made with ❤️ — Aman Narang • Built with HTML & CSS</div>
       <div class="social" role="navigation" aria-label="social">
         <a href="mailto:0402narang@gmail.com">📧 Email</a>
-        <a href="https://github.com/amannarang04" target="_blank" rel="noopener">💻 GitHub</a>
-        <a href="https://www.linkedin.com/in/amannarang04" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a href="https://github.com/amannarang04" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+        <a href="https://www.linkedin.com/in/amannarang04" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
       </div>
     </footer>
   </div>
-
- 
 </body>
 </html>
